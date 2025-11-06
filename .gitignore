@@ -29,7 +29,6 @@ lerna-debug.log*
 pnpm-debug.log*
 
 # Package manager lock files
-package-lock.json
 yarn.lock
 pnpm-lock.yaml
 .pnpm-store/
@@ -880,7 +879,9 @@ venv.bak/
 
 # Data files
 *.csv
-*.json
+# keep JSON datasets out of version control, but allow config manifests
+# by only ignoring files inside the data directories themselves
+data/**/*.json
 *.xml
 *.parquet
 data/
@@ -915,3 +916,5 @@ config/database.yml
 *.zip
 
 # ===== END =====
+!public/
+!public/**
